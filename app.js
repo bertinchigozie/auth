@@ -1,6 +1,7 @@
 const express = require("express");
 const userRoute = require("./routes/userRoute");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 
 const CustomError = require("./util/customError");
 
@@ -19,6 +20,7 @@ app.use((req, res, next) => {
 
   next();
 });
+app.use(cors());
 
 app.use("/api/v1/users", userRoute);
 
