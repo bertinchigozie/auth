@@ -5,6 +5,7 @@ const cors = require("cors");
 
 const CustomError = require("./util/customError");
 
+app.use(cors());
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -20,7 +21,6 @@ app.use((req, res, next) => {
 
   next();
 });
-app.use(cors());
 
 app.use("/api/v1/users", userRoute);
 
