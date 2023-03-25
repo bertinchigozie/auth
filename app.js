@@ -20,12 +20,11 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use("/api/v1/users", userRoute);
+
 app.get("/", (req, res) => {
   res.end("Hello World");
 });
-
-app.use("/api/v1/users", userRoute);
-
 app.all("*", (req, res, next) => {
   next(new CustomError(`Can't find ${req.originalUrl} on the server`, 404));
 });
