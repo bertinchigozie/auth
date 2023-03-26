@@ -6,6 +6,7 @@ const app = require("./app");
 
 const DB = process.env.MONGO_URI;
 const port = process.env.PORT || 3000;
+const host = process.env.HOST || "localhost";
 
 mongoose
   .connect(DB, {
@@ -19,6 +20,6 @@ mongoose
     console.log(e.message);
   });
 
-app.listen(port, "localhost", () => {
+app.listen(port, host, () => {
   console.log(`App running on port: ${port}...`);
 });
