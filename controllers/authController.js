@@ -19,7 +19,7 @@ exports.signup = async (req, res, next) => {
     const token = jwt.sign({ id: newUser._id }, process.env.JWT_SECRET, {
       expiresIn: process.env.EXPIRES_IN
     });
-    res.setHeader("Content-type", "application/json");
+    // res.setHeader("Content-type", "application/json");
     return res.status(200).json({
       status: "Success",
       token,
