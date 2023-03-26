@@ -23,7 +23,7 @@ exports.signup = async (req, res, next) => {
     return res.status(200).json({
       status: "Success",
       token,
-      data: { newUser }
+      data: newUser
     });
   } catch (error) {
     return next(new CustomError(error.message, 400));
