@@ -20,6 +20,6 @@ mongoose
     console.log(e.message);
   });
 
-app.listen(port, host, () => {
+app.listen(port, () => {
   console.log(`App running on port: ${port}...`);
 });
